@@ -88,11 +88,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="一-什么是Hexo"><a href="#一-什么是Hexo" class="headerlink" title="一.什么是Hexo"></a>一.什么是Hexo</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h2 id="二-安装"><a href="#二-安装" class="headerlink" title="二.安装"></a>二.安装</h2><h3 id="①安装前提"><a href="#①安装前提" class="headerlink" title="①安装前提"></a>①安装前提</h3><p>检查电脑中是否已安装下列应用程序：<br>1.Node.js (Should be at least nodejs 6.9)<br>2.Git</p>
+<p>$ npm install -g hexo-cli</p>
+<p><code>(Mac 用户
+ 您在编译时可能会遇到问题，请先到 App Store 安装 Xcode，Xcode 完成后，启动并进入 Preferences -&gt; Download -&gt; Command Line Tools -&gt; Install 安装命令行工具。)</code></p>
+<h3 id="1、安装Git"><a href="#1、安装Git" class="headerlink" title="1、安装Git"></a>1、安装Git</h3><p>1.Windows：下载并安装 git.<br>    由于众所周知的原因，从上面的链接下载git for windows最好挂上一个代理，否则下载速度十分缓慢。<br>    也可以参考<code>https://github.com/waylau/git-for-win</code>这个页面，收录了存储于百度云的下载地址。<br>2.Mac：使用 Homebrew, MacPorts ：brew install git;或下载 安装程序 安装。<br>3.Linux (Ubuntu, Debian)：sudo apt-get install git-core</p>
+<p>当你安装好了git以后，可以鼠标右键唤出git:<br><img src="/2019/08/02/Hexo-小白/git.png" alt></p>
+<h3 id="2、安装node-js"><a href="#2、安装node-js" class="headerlink" title="2、安装node.js"></a>2、安装node.js</h3><p>1.Node的安装包中包括了NPM，所以只要安装了Node就安装了NPM，首先去Node的官网下载Node 的安装包<br>  <code>https://nodejs.org/en/</code><br>2.安装包下载安装完成后<br>    打开命令行的窗口，输入<code>node -v</code>，和<code>npm -v</code>，出现版本号，就说明你的node和npm安装成功了</p>
+<h4 id="注意：一般出于安全考虑，只有在Git-Bash-Here中才能进行Git的相关操作。如果需要在cmd命令行里调用Git，那么就要配置电脑的环境变量Path，或者在安装的时候选择use-Git-from-the-Windows-Command-Prompt。这个可有可无，影响不大，成功配置的界面如图"><a href="#注意：一般出于安全考虑，只有在Git-Bash-Here中才能进行Git的相关操作。如果需要在cmd命令行里调用Git，那么就要配置电脑的环境变量Path，或者在安装的时候选择use-Git-from-the-Windows-Command-Prompt。这个可有可无，影响不大，成功配置的界面如图" class="headerlink" title="注意：一般出于安全考虑，只有在Git Bash Here中才能进行Git的相关操作。如果需要在cmd命令行里调用Git，那么就要配置电脑的环境变量Path，或者在安装的时候选择use Git from the Windows Command Prompt。这个可有可无，影响不大，成功配置的界面如图"></a>注意：一般出于安全考虑，只有在Git Bash Here中才能进行Git的相关操作。如果需要在cmd命令行里调用Git，那么就要配置电脑的环境变量Path，或者在安装的时候选择use Git from the Windows Command Prompt。这个可有可无，影响不大，成功配置的界面如图</h4><p><img src="/2019/08/02/Hexo-小白/git-v.png" alt></p>
+<h2 id="3、安装hexo"><a href="#3、安装hexo" class="headerlink" title="3、安装hexo"></a>3、安装hexo</h2><p>1.在自己认为合适的地方创个文件夹，通过命令行进入到该文件夹里面<br>    cd D:\360MoveData\Users\lenovo\Desktop\假期\hexo<br>2.输入<code>npm install -g hexo-cli</code>,开始安装Hexo<br>    输入<code>hexo -v</code>，检查hexo是否安装成功<br>    <img src="/2019/08/02/Hexo-小白/hexo-v.png" alt><br>3.输入<code>hexo init</code>，初始化该文件夹（有点漫长的等待。。。）<br>    <img src="/2019/08/02/Hexo-小白/%E5%88%9D%E5%A7%8B%E5%8C%96hexo.png" alt><br>    <img src="/2019/08/02/Hexo-小白/%E5%88%9D%E5%A7%8B%E5%8C%962.png" alt><br>    看到后面的“Start blogging with Hexo！”，激动有木有！！！！！<br>4.输入<code>npm install</code>，安装所需要的组件<br>  组件分布：<br>        .<br>        ├── _config.yml     网站的 配置 信息，您可以在此配置大部分的参数。<br>        ├── package.json    应用程序的信息。EJS, Stylus 和 Markdown renderer 已默认安装，您可以自由移除。<br>        ├── scaffolds       模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。<br>        ├── source          资源文件夹是存放用户资源的地方。除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 public 文件夹，而其他文件会被拷贝过去。<br>        |   ├── _drafts<br>        |   └── _posts<br>        └── themes          主题 文件夹。Hexo 会根据主题来生成静态页面。<br>5.输入<code>hexo g</code>，首次体验Hexo<br>6.输入<code>hexo s</code>，开启服务器，访问该网址，正式体验Hexo<br>    <code>http://localhost:4000</code><br>     <img src="/2019/08/02/Hexo-小白/hexo-s.png" alt></p>
+<p>注意问题：<br>  假如页面一直无法跳转，那么可能端口被占用了。此时我们ctrl+c停止服务器，接着输入“hexo server -p 端口号”来改变端口号<br>     <img src="/2019/08/02/Hexo-小白/%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8.png" alt></p>
+<h5 id="…hexo博客md插入图片"><a href="#…hexo博客md插入图片" class="headerlink" title="…hexo博客md插入图片"></a>…hexo博客md插入图片</h5><p>1.把主页配置文件_config.yml 里的post_asset_folder:这个选项设置为true（如果没有就不用管了）<br>2.在cmd中你的hexo目录下执行这样一句话<code>npm install hexo-asset-image –save</code>，这是下载安装一个可以上传本地图片的插件.<br>        注意：安装有bug!!!<br>            可用<code>npm install https://github.com/CodeFalling/hexo-asset-image -- save</code><br>3.安装完成后，再运行<code>hexo n “title”</code>来生成md博文时，/source/_posts文件夹内除了title.md文件还有一个同名的文件夹<br>4.在title.md中引入图片时，先把图片复制到title这个文件夹中，<br>然后只需要在title.md中按照markdown的格式引入图片：<br><code>![你想输入的替代文字](title/图片.png)</code></p>
+<h2 id="三、写作"><a href="#三、写作" class="headerlink" title="三、写作"></a>三、写作</h2><h5 id="快速上手-步骤"><a href="#快速上手-步骤" class="headerlink" title="快速上手.步骤"></a>快速上手.步骤</h5><p>第一步：创建博文<br>    在你的博客主目录下通过git bash键入<code>hexo new 博客标题</code><br>第二步：按照hexo的渲染方式将你的博文渲染成静态文件<br>    继上一步之后，<code>hexo g</code>（完整命令是<code>hexo generate</code>，即生成文件的意思）<br>第三步：按照_config.yml里配置的发布方式，将public里的静态文件上传至你的线上代码仓库（Github或Coding）<br>    <code>hexo d</code>（完整命令是<code>hexo deploy</code>，即发布的意思）</p>
+<p>仅此而已，这时打开浏览器，输入符合你pages的域名，看看自己的博客是不是显现出来了。</p>
+<p>######： <code>hexo new draft Test</code><br>    Hexo 有三种默认布局：post、page 和 draft，它们分别对应不同的路径，而您自定义的其他布局和 post 相同，都将储存到 source/_posts 文件夹。<br>    布局        路径<br>    post    source/_posts<br>    page    source<br>    draft    source/_drafts</p>
+<pre><code>`hexo new draft Test`
+hexo默认你的文件为post 然后你就可以运行 hexo server 来本地运行实时查看你写的文章，draft 为你的草稿文件夹，在创建文章的时候，只要指定文章的模板是draft，就可以将文章创建到source/_drafts/目录下：
+这样就会将Test这篇文章作为草稿放到_drafts目录下了,_darfts自然就出现了。</code></pre><h4 id="具体过程："><a href="#具体过程：" class="headerlink" title="具体过程："></a>具体过程：</h4><p>1.<code>hexo init [folder]</code>  新建一个网站。如果没有设置 folder ，Hexo 默认在目前的文件夹建立网站。<br>2.<code>hexo new [layout] &lt;title&gt;</code>   新建一篇文章。如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。<br>    <code>hexo new &quot;Hexo 小白</code><br>3.<code>hexo generate</code>  生成静态文件。</p>
+<p>   选项    描述<br>    -d, –deploy    文件生成后立即部署网站<br>    -w, –watch    监视文件变动</p>
+<ol start="4">
+<li><p><code>hexo publish [layout] &lt;filename&gt;</code>   发表草稿…之后再说</p>
+</li>
+<li><p><code>hexo server</code>   启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
+<p> 选项    描述<br> -p, –port    重设端口<br> -s, –static    只使用静态文件<br> -l, –log    启动日记记录，使用覆盖记录格式</p>
+</li>
+<li><p><code>hexo deploy</code>    部署网站。</p>
+<p>参数    描述<br>-g, –generate    部署之前预先生成静态文件</p>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/02/Hexo-小白/" data-id="cjytplvi20000zctdqwzu16o0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/02/Hexo-小白/" data-id="cjyu0i2hb0000xgtddos74r0n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/introduction/">introduction</a></li></ul>
@@ -143,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/02/hello-world/" data-id="cjytplvih0001zctdw242fyaf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/02/hello-world/" data-id="cjyu0i2hg0001xgtdkx5j2cvg" class="article-share-link">Share</a>
       
       
     </footer>
