@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hexo</title>
+  <title>hexo关联github | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -176,77 +176,12 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
+      
 <section id="intro">
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/08/03/更改hexo博客主题/">更改hexo博客主题</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-08-03T06:37:21.000Z" itemprop="datePublished">
-          2019-08-03
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/08/03/更改hexo博客主题/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/08/03/hexo关联github/">hexo关联github</a></h3>
-                    <span>
-                        <span class="post-meta">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
       <time datetime="2019-08-03T06:35:35.000Z" itemprop="datePublished">
           2019-08-03
       </time>
@@ -259,116 +194,91 @@
     
     
 </span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        关联github1.登录github，新建仓库，注意命名规则‘用户名.github.io’,例如我的仓库名字就是‘zhangyr4869.github.io’。仓库建立成功如下图：
-i
-2.cd回到hexo项目目录，打开_config.yml文件，找到下面这段代码:deploy:
+                <h1>hexo关联github</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h2 id="关联github"><a href="#关联github" class="headerlink" title="关联github"></a>关联github</h2><p>1.登录github，新建仓库，注意命名规则‘用户名.github.io’,例如我的仓库名字就是‘zhangyr4869.github.io’。仓库建立成功如下图：</p>
+<p>i<a href="hexo关联github/建库.png"></a></p>
+<p>2.cd回到hexo项目目录，打开_config.yml文件，找到下面这段代码:<br><code>deploy:
     type: git
     repository: https://github.com/XXX/XXX.github.io.git
-    bran
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/08/03/hexo关联github/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
+    branch: master</code><br><code>注意：冒号后面有一个空格，把“XXX”换成自己仓库的名字。</code><br>3.生成静态页面，执行：<br><code>$ hexo generate        或者：hexo g</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 此时若出现如下报错：</span><br><span class="line">ERROR Local hexo not found in ~/blog</span><br><span class="line">ERROR Try runing: &apos;npm install hexo --save&apos;</span><br><span class="line"></span><br><span class="line">// 则执行命令：</span><br><span class="line">$ npm install hexo --save</span><br><span class="line">// 若无报错，自行忽略此步骤。</span><br></pre></td></tr></table></figure>
+
+<p>4.配置页面，执行：<br><code>$ hexo deploy            或者：hexo d</code><br>注意：若执行命令hexo deploy报错：无法连接git或找不到git，则执行如下命令来安装hexo-deployer-git：<br><code>$ npm install hexo-deployer-git --save</code><br>5.输入git账号和密码</p>
+<h4 id="打开网页地址"><a href="#打开网页地址" class="headerlink" title="打开网页地址"></a>打开网页地址</h4><p>浏览器打开网址<a href="http://zhangyr4869.github.io" target="_blank" rel="noopener">http://zhangyr4869.github.io</a><br>本地打开<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 页面一致</p>
+<h4 id="接下来可以发表文章"><a href="#接下来可以发表文章" class="headerlink" title="接下来可以发表文章"></a>接下来可以发表文章</h4><p><code>$ hexo generate          //生成静态页面</code><br><code>$ hexo deploy            //部署到Github</code></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/08/02/Hexo-小白/">Hexo 小白</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-08-02T03:55:51.000Z" itemprop="datePublished">
-          2019-08-02
-      </time>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/08/03/更改hexo博客主题/" style="float: left;">
+        ← 更改hexo博客主题
+    </a>
     
     
-    | 
-    <a href='/tags/introduction/'>introduction</a>,
+    <a class="pull-right" href="/2019/08/02/Hexo-小白/">
+        Hexo 小白 →
+    </a>
     
-    <a href='/tags/hexo/'>hexo</a>
-    
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        一.什么是HexoHexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
-二.安装①安装前提检查电脑中是否已安装下列应用程序：1.Node.js (Should be at least nodejs 6.9)2.Git
-$ npm install -g hexo-cli
-(Mac 用户
- 您在编译时可能会遇到问题，请先到 App Store 安装
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/08/02/Hexo-小白/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/08/02/hello-world/">Hello World</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-08-02T02:27:38.670Z" itemprop="datePublished">
-          2019-08-02
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new p
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/08/02/hello-world/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          
-        </nav>
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
+
 
       
 <!-- ============================ Footer =========================== -->
